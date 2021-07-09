@@ -1,4 +1,4 @@
-import { mergePersistedState, validatePersistedState } from '../actions';
+import { validatePersistedState } from '../actions';
 import { actionsEnum } from '../const';
 import { saveState, loadState } from '../localStorage';
 
@@ -9,7 +9,7 @@ const buildStateToSave = (store: any) => ({
 });
 
 export const persistenceCustomMiddleware = (store: any) => (next: any) => (action: any) => {
-  next(action);
+  const result = next(action);
 
   switch (action.type) {
     case actionsEnum.INCREMENT_COUNTER:
@@ -29,4 +29,6 @@ export const persistenceCustomMiddleware = (store: any) => (next: any) => (actio
       }
       break;
   }
+
+  return result;
 };

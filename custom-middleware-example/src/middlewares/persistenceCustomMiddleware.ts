@@ -9,7 +9,7 @@ const buildStateToSave = (store: any) => ({
 });
 
 export const persistenceCustomMiddleware = (store: any) => (next: any) => (action: any) => {
-  next(action);
+  const result = next(action);
 
   switch (action.type) {
     case actionsEnum.INCREMENT_COUNTER:
@@ -23,11 +23,12 @@ export const persistenceCustomMiddleware = (store: any) => (next: any) => (actio
     case actionsEnum.LOAD_PERSISTED_STATE:
       // Read state from local storage
       const persistedState = loadState(buildKey());
-      console.log(persistedState.counterReducer.value);
       if (persistedState != null) {
         // Dispatch action to update current state using the persisted information
         store.dispatch(setCounterValue(persistedState.counterReducer.value));
       }
       break;
   }
+
+  return result;
 };
