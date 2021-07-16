@@ -36,6 +36,6 @@ The example resulting from previous section, [custom-middleware-with-persistence
 
 ## Persistence with Hooks
 
-What if the application does not use Redux? Persistence can be achieved in applications with Hooks and without Redux using React context provider.
+What if the application does not use Redux? Persistence can be achieved in applications with Hooks and without Redux using React Context provider.
 
 Starting with a boilerplate project, [hooks-persistence-boilerplate](https://github.com/ebarriosara/Persistence/tree/master/hooks-persistence-boilerplate), which has been created using [Create React App](https://github.com/facebook/create-react-app), persistence of the counter value has been achieved using React Context provider. The final project is [hooks-persistence-example](https://github.com/ebarriosara/Persistence/tree/master/hooks-persistence-example).
