@@ -1,5 +1,4 @@
-import { AnyAction, CombinedState, combineReducers, Reducer } from 'redux';
-import { BaseAction } from '../actions';
+import { combineReducers } from 'redux';
 import { CounterState, counterReducer } from './counterReducer';
 import { persistenceReducer } from './persistenceReducer';
 

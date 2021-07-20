@@ -15,7 +15,7 @@ export const Page = (props: PageProps) => {
 
   React.useEffect(() => {
     loadPersistedState();
-  }, []);
+  }, [loadPersistedState]);
 
   return (
     <div className="App">
