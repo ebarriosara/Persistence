@@ -18,7 +18,7 @@ const buildStateToSave = (state: { count: number }) => ({
 });
 
 const countReducerInitializer = () => {
-  return loadState(buildKey()) || { count: 0 };
+  return loadState(buildKey()) || initialState;
 }
 
 export const PersistenceProvider = ({ children }: { children: JSX.Element }) => {
