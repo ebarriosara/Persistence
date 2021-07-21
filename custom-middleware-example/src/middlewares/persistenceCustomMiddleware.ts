@@ -13,9 +13,6 @@ export const persistenceCustomMiddleware = (store: any) => (next: any) => (actio
 
   switch (action.type) {
     case actionsEnum.INCREMENT_COUNTER:
-      // Save state to local storage        
-      saveState(buildKey(), buildStateToSave(store));
-      break;
     case actionsEnum.DECREMENT_COUNTER:
       // Save state to local storage 
       saveState(buildKey(), buildStateToSave(store));
